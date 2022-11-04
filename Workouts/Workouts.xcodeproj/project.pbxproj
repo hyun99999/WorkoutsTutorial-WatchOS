@@ -15,6 +15,7 @@
 		F8A3C89A2912C52C00291F00 /* Workouts_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8992912C52C00291F00 /* Workouts_Watch_AppTests.swift */; };
 		F8A3C8A42912C52C00291F00 /* Workouts_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8A32912C52C00291F00 /* Workouts_Watch_AppUITests.swift */; };
 		F8A3C8A62912C52C00291F00 /* Workouts_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8A52912C52C00291F00 /* Workouts_Watch_AppUITestsLaunchTests.swift */; };
+		F8A3C8B72914C10A00291F00 /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8B62914C10A00291F00 /* SessionPagingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F8A3C89F2912C52C00291F00 /* Workouts Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Workouts Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3C8A32912C52C00291F00 /* Workouts_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		F8A3C8A52912C52C00291F00 /* Workouts_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8A3C8B62914C10A00291F00 /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				F8A3C8882912C52B00291F00 /* WorkoutsApp.swift */,
 				F8A3C88A2912C52B00291F00 /* StartView.swift */,
+				F8A3C8B62914C10A00291F00 /* SessionPagingView.swift */,
 				F8A3C88C2912C52C00291F00 /* Assets.xcassets */,
 				F8A3C88E2912C52C00291F00 /* Preview Content */,
 			);
@@ -311,6 +314,7 @@
 			files = (
 				F8A3C88B2912C52B00291F00 /* StartView.swift in Sources */,
 				F8A3C8892912C52B00291F00 /* WorkoutsApp.swift in Sources */,
+				F8A3C8B72914C10A00291F00 /* SessionPagingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
