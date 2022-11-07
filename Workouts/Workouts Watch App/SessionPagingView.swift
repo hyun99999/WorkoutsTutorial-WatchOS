@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct SessionPagingView: View {
     // default is metrics. the metrics view is displayed.
@@ -16,9 +17,10 @@ struct SessionPagingView: View {
     }
     var body: some View {
         TabView(selection: $selection) {
-            Text("Controls").tag(Tab.controls)
-            Text("Metrics").tag(Tab.metrics)
-            Text("Now Playing").tag(Tab.nowPlaying)
+            ControlsView().tag(Tab.controls)
+            MetricsView().tag(Tab.metrics)
+            // SwiftUI view provided by WatchKit.
+            NowPlayingView().tag(Tab.nowPlaying)
         }
     }
 }
