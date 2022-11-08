@@ -15,7 +15,7 @@ struct StartView: View {
         List(workoutTypes) { workoutType in
             NavigationLink(
                 workoutType.name,
-                destination: Text(workoutType.name)
+                destination: SessionPagingView()
             ).padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
         }
         .listStyle(.carousel)
