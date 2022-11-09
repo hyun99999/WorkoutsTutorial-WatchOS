@@ -61,7 +61,6 @@ struct SummaryView: View {
                 ).frame(width: 50, height: 50)
                 Button("Done") {
                 }
-                
             }
             .scenePadding()
         }

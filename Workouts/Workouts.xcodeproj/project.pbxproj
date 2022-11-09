@@ -21,6 +21,7 @@
 		F8A3C8BD29156D2D00291F00 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8BC29156D2D00291F00 /* ControlsView.swift */; };
 		F8A3C8BF291A000800291F00 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8BE291A000800291F00 /* SummaryView.swift */; };
 		F8A3C8C1291A065500291F00 /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8C0291A065500291F00 /* ActivityRingsView.swift */; };
+		F8A3C8C5291BEA3D00291F00 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3C8C4291BEA3D00291F00 /* WorkoutManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F8A3C8BC29156D2D00291F00 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		F8A3C8BE291A000800291F00 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		F8A3C8C0291A065500291F00 /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		F8A3C8C4291BEA3D00291F00 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				F8A3C88A2912C52B00291F00 /* StartView.swift */,
 				F8A3C8C0291A065500291F00 /* ActivityRingsView.swift */,
 				F8A3C8BE291A000800291F00 /* SummaryView.swift */,
+				F8A3C8C4291BEA3D00291F00 /* WorkoutManager.swift */,
 				F8A3C8B62914C10A00291F00 /* SessionPagingView.swift */,
 				F8A3C8B82914C99F00291F00 /* MetricsView.swift */,
 				F8A3C8BC29156D2D00291F00 /* ControlsView.swift */,
@@ -329,6 +332,7 @@
 			files = (
 				F8A3C88B2912C52B00291F00 /* StartView.swift in Sources */,
 				F8A3C8BF291A000800291F00 /* SummaryView.swift in Sources */,
+				F8A3C8C5291BEA3D00291F00 /* WorkoutManager.swift in Sources */,
 				F8A3C8892912C52B00291F00 /* WorkoutsApp.swift in Sources */,
 				F8A3C8BB291569CD00291F00 /* ElapsedTimeView.swift in Sources */,
 				F8A3C8B92914C99F00291F00 /* MetricsView.swift in Sources */,
