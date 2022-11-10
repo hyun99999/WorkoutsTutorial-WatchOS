@@ -16,6 +16,7 @@ struct Workouts_Watch_AppApp: App {
             NavigationView {
                 StartView()
             }
+            // NavigationView is assigned an environmentObject, it automatically passes the enviromentObject to views in. is view hierarchy.
             .environmentObject(workoutManager)
         }
     }
