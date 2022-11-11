@@ -507,6 +507,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Workouts-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Workouts;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Yout workout related data will be used to display your saved workouts in Workouts.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by Workouts on Aple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +541,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Workouts-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Workouts;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Yout workout related data will be used to display your saved workouts in Workouts.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by Workouts on Aple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
