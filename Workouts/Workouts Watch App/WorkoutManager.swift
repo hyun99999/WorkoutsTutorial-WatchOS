@@ -72,4 +72,30 @@ class WorkoutManager: NSObject, ObservableObject {
             // Handle error.
         }
     }
+    
+    // MARK: - State Control
+
+    // The workout session state.
+    // Create a publisher of this type.
+    @Published var running = false
+
+    func pause() {
+        session?.pause()
+    }
+
+    func resume() {
+        session?.resume()
+    }
+
+    func togglePause() {
+        if running == true {
+            pause()
+        } else {
+            resume()
+        }
+    }
+
+    func endWorkout() {
+        session?.end()
+    }
 }
