@@ -9,6 +9,8 @@ import SwiftUI
 import HealthKit
 
 struct StartView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    
     var workoutTypes: [HKWorkoutActivityType] = [.cycling, .running, .walking]
     
     var body: some View {
@@ -20,6 +22,9 @@ struct StartView: View {
         }
         .listStyle(.carousel)
         .navigationTitle("Workouts")
+        .onAppear {
+            workoutManager.requestAuthorization()
+        }
     }
 }
 
