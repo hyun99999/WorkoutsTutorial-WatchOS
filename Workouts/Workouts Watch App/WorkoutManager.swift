@@ -42,6 +42,8 @@ class WorkoutManager: NSObject, ObservableObject {
             healthStore: healthStore,
             workoutConfiguration: configuration
         )
+        
+        session?.delegate = self
 
         // Start the workout session and begin data collection.
         let startDate = Date()
@@ -97,5 +99,31 @@ class WorkoutManager: NSObject, ObservableObject {
 
     func endWorkout() {
         session?.end()
+    }
+}
+
+// MARK: - HKWorkoutSessionDelegate
+
+// to listen for changes to the session state.
+extension WorkoutManager: HKWorkoutSessionDelegate {
+    func workoutSession(_ workoutSession: HKWorkoutSession,
+                        didChangeTo toState: HKWorkoutSessionState,
+                        from fromState: HKWorkoutSessionState,
+                        date: Date) {
+        DispatchQueue.main.async {
+            self.running = toState == .running
+        }
+
+        // Wait for the session to transition states before ending the builder.
+        if toState == .ended {
+            builder?.endCollection(withEnd: date) { (success, error) in
+                self.builder?.finishWorkout { (workout, error) in
+                }
+            }
+        }
+    }
+
+    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+
     }
 }
