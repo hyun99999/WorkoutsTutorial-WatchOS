@@ -27,6 +27,16 @@ struct SessionPagingView: View {
         // We don't want go back to the StartView while they are in a workout.
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(selection == .nowPlaying)
+        // We shouldn't need to swipe to the MatrcisView when they pauses or resumes their workout.
+        .onChange(of: workoutManager.running) { _ in
+            displayMetricsView()
+        }
+    }
+    
+    private func displayMetricsView() {
+        withAnimation {
+            selection = .metrics
+        }
     }
 }
 
