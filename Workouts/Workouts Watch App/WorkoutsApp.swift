@@ -16,6 +16,9 @@ struct Workouts_Watch_AppApp: App {
             NavigationView {
                 StartView()
             }
+            .sheet(isPresented: $workoutManager.showingSummaryView) {
+                SummaryView()
+            }
             // NavigationView is assigned an environmentObject, it automatically passes the enviromentObject to views in. is view hierarchy.
             .environmentObject(workoutManager)
         }
