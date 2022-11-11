@@ -9,6 +9,7 @@ import SwiftUI
 import WatchKit
 
 struct SessionPagingView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
     // default is metrics. the metrics view is displayed.
     @State private var selection: Tab = .metrics
     
@@ -22,6 +23,10 @@ struct SessionPagingView: View {
             // SwiftUI view provided by WatchKit.
             NowPlayingView().tag(Tab.nowPlaying)
         }
+        .navigationTitle(workoutManager.selectedWorkout?.name ?? "")
+        // We don't want go back to the StartView while they are in a workout.
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(selection == .nowPlaying)
     }
 }
 
