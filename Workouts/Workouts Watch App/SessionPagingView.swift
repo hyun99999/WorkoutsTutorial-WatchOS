@@ -43,5 +43,6 @@ struct SessionPagingView: View {
 struct SessionPagingView_Previews: PreviewProvider {
     static var previews: some View {
         SessionPagingView()
+            .environmentObject(WorkoutManager())
     }
 }

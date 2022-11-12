@@ -31,6 +31,7 @@ struct StartView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         StartView()
+            .environmentObject(WorkoutManager())
     }
 }
 
