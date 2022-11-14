@@ -136,6 +136,13 @@ data flow 에 대해서 알아보자.
 
 <img width="700" alt="스크린샷 2022-11-08 오후 3 45 36" src="https://user-images.githubusercontent.com/69136340/201654356-48768635-c08c-47e6-9c6e-d92871179a23.png">
 
+WorkoutManager(우리가 만드는 HealthKit 을 매니징 할 수 있는 클래스)는 HealthKit 과의 인터페이스를 담당합니다. 
+HKWorkoutSession 과 인터페이스하여 운동을 시작, 일시 중지 및 종료 할 수 있습니다.
+HKLiveWorkoutBuilder 와 인터페이스하여 운동 샘플을 수신하고 해당 데이터를 뷰에 제공할 수 있습니다.
+
+environmentObject 로 WorkoutManager 를 할당하여 NavigationView 의 뷰 계층 구조에 있는 뷰에 전파할 수 있습니다.
+그리고 다음 뷰는 @EnvironmentObject 를 선언하여 WorkoutManager 에 대한 액세스 권한을 얻을 수 있습니다.
+
 출처:
 
 [Build a workout app for Apple Watch - WWDC21 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2021/10009/)
