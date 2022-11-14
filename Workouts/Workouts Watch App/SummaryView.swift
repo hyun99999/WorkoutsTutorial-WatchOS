@@ -9,6 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct SummaryView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
     @Environment(\.dismiss) var dismiss
     @State private var durationFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -18,56 +19,59 @@ struct SummaryView: View {
     }()
     
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(alignment: .leading) {
-                SummaryMetricView(
-                    title: "Total Time",
-                    value: durationFormatter.string(from: 30 * 60 + 15) ?? ""
-                ).accentColor(Color.yellow)
-                SummaryMetricView(
-                    title: "Total Distance",
-                    value: Measurement(
-                        value: 1625,
-                        unit: UnitLength.meters
-                    ).formatted(
-                        .measurement(
-                            width: .abbreviated,
-                            usage: .road
+        if workoutManager.workout == nil {
+            ProgressView("Saving workout")
+                .navigationBarHidden(true)
+        } else {
+            ScrollView(.vertical) {
+                VStack(alignment: .leading) {
+                    SummaryMetricView(
+                        title: "Total Time",
+                        value: durationFormatter.string(from: 30 * 60 + 15) ?? ""
+                    ).accentColor(Color.yellow)
+                    SummaryMetricView(
+                        title: "Total Distance",
+                        value: Measurement(
+                            value: 1625,
+                            unit: UnitLength.meters
+                        ).formatted(
+                            .measurement(
+                                width: .abbreviated,
+                                usage: .road
+                            )
                         )
-                    )
-                ).accentColor(Color.green)
-                SummaryMetricView(
-                    title: "Total Energy",
-                    value: Measurement(
-                        value: 96,
-                        unit: UnitEnergy.kilocalories
-                    ).formatted(
-                        .measurement(
-                            width: .abbreviated,
-                            usage: .workout,
-                            numberFormatStyle: .number)
-                    )
-                ).accentColor(Color.pink)
-                SummaryMetricView(
-                    title: "Avg. Heart Rate",
-                    value: 143
-                        .formatted(
+                    ).accentColor(Color.green)
+                    SummaryMetricView(
+                        title: "Total Calories",
+                        value: Measurement(
+                            value: 96,
+                            unit: UnitEnergy.kilocalories
+                        ).formatted(
+                            .measurement(
+                                width: .abbreviated,
+                                usage: .workout,
+                                numberFormatStyle: .number)
+                            )
+                    ).accentColor(Color.pink)
+                    SummaryMetricView(
+                        title: "Avg. Heart Rate",
+                        value: 143.formatted(
                             .number.precision(.fractionLength(0))
                         )
-                    + " bpm"
-                ).accentColor(Color.red)
-                Text("Activity Rings")
-                ActivityRingsView(
-                    healthStore: HKHealthStore()
-                ).frame(width: 50, height: 50)
-                Button("Done") {
-                    dismiss()
+                        + " bpm"
+                    )
+                    Text("Activity Rings")
+                    ActivityRingsView(healthStore: workoutManager.healthStore)
+                        .frame(width: 50, height: 50)
+                    Button("Done") {
+                        dismiss()
+                    }
                 }
+                .scenePadding()
             }
-            .scenePadding()
+            .navigationTitle("Summary")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Summary")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -89,5 +93,6 @@ struct SummaryMetricView: View {
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
         SummaryView()
+            .environmentObject(WorkoutManager())
     }
 }
