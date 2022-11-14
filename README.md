@@ -5,12 +5,12 @@
 
 ## 👉 Build a workout app for Apple Watch
 
-세션 중 심박수를 수집할 수 있는 HKWorkoutSession 클래스에 대해서 들을 수 있었다.
+세션 중 심박수를 수집할 수 있는 `HKWorkoutSession` 클래스에 대해서 들을 수 있었다.
 
 <img width="700" alt="스크린샷 2022-11-08 오후 1 51 06" src="https://user-images.githubusercontent.com/69136340/201652898-919387dd-bf7c-49d4-80b4-7b78fbc8e4c9.png">
 
-- HKWorkoutSession 은 데이터 수집을 위해 장치의 센서를 준비하므로, 운동과 관련된 데이터를 정확하게 수집할 수 있습니다**(칼로리와 심박수와 같은 정보 수집).** 또한 운동이 활성화되어 있을 때 애플리케이션이 백그라운드에서 실행되도록 합니다.
-- HKLiveWorkoutBuilder 는 HKWorkout 객체를 생성하고 저장합니다. 자동으로 샘플과 이벤트를 수집합니다.
+- `HKWorkoutSession` 은 데이터 수집을 위해 장치의 센서를 준비하므로, 운동과 관련된 데이터를 정확하게 수집할 수 있습니다 **(칼로리와 심박수와 같은 정보 수집)** . 또한 운동이 활성화되어 있을 때 애플리케이션이 백그라운드에서 실행되도록 합니다.
+- `HKLiveWorkoutBuilder` 는 HKWorkout 객체를 생성하고 저장합니다. 자동으로 샘플과 이벤트를 수집합니다.
 
 `**New ways to work with workouts**` 세션에서 많은 내용을 확인할 수 있습니다.
 
@@ -48,8 +48,8 @@
 
 ### 👉 프로젝트 세팅
 
-- watch app target 에 HealthKit 을 추가합니다.
-- 백그라운드에서 workout session 이 실행되어야 하기 때문에 background modes capability 를 추가해야 합니다.
+- watch app target 에 `HealthKit` 을 추가합니다.
+- 백그라운드에서 workout session 이 실행되어야 하기 때문에 `background modes capability` 를 추가해야 합니다.
 
 <img width="600" alt="스크린샷 2022-11-11 오후 6 02 29" src="https://user-images.githubusercontent.com/69136340/201652970-d44a3251-79e2-41f2-97f8-a3f8fec5e46b.png">
 
@@ -148,14 +148,14 @@ data flow 에 대해서 알아보자.
 
 위는 Notification interfaces 를 기기에서 빌드하는 방법을 소개해준 글입니다. 이를 통해 우리는 손목에 착용하지 않아도 어떤 조건으로 기기에서 빌드할 수 있는지 알 수 있습니다.
 
-**기기를 손목에 착용하지 않은 상태에서 notification interfaces 를 테스트하려면 다음의 단계를 따르세요.**
+_**기기를 손목에 착용하지 않은 상태에서 notification interfaces 를 테스트하려면 다음의 단계를 따르면 됩니다.**_
 
 - 애플 워치에서 손목 감지를 비활성화 합니다. companion iPhone 의 watch 앱 또는 watch 의 Setting 에서 설정할 수 있습니다. 옵션은 **Passcode > Wrist Detection** 에 있습니다.
 - 애플 워치가 충전기에 연결되어 있지 않은지 확인합니다.
-- iPhone 을 잠그세요.
+- iPhone 을 잠급니다.
 
-watch-only app 을 만들더라도 내 iPhone 기기를 통해서 애플워치에 접근할 수 있었다.
+watch-only app 을 만들더라도 내 iPhone 기기를 통해서 애플워치에 접근할 수 있었습니다.
 
-이때 provisioning profile 에 애플 워치 기기를 추가하여 빌드할 수 있다는 창이 등장한다. 이를 통해 신뢰하고 빌드할 수 있는 기기로 추가할 수 있었다.
+이때 provisioning profile 에 애플 워치 기기를 추가하여 빌드할 수 있다는 창이 등장합니다. 이를 통해 신뢰하고 빌드할 수 있는 기기로 추가할 수 있었습니다.
 
 <img width="300" alt="스크린샷 2022-11-12 오전 8 24 37" src="https://user-images.githubusercontent.com/69136340/201653306-fdf1035c-1c14-4615-af3b-f5578aac52f6.png">
