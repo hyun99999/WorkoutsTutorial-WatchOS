@@ -141,6 +141,17 @@ class WorkoutManager: NSObject, ObservableObject {
             }
         }
     }
+    
+    func resetWorkout() {
+        selectedWorkout = nil
+        builder = nil
+        session = nil
+        workout = nil
+        activeEnergy = 0
+        averageHeartRate = 0
+        heartRate = 0
+        distance = 0
+    }
 }
 
 // MARK: - HKWorkoutSessionDelegate
