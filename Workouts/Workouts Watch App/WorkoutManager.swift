@@ -22,7 +22,7 @@ class WorkoutManager: NSObject, ObservableObject {
         didSet {
             // Sheet dismissed
             if showingSummaryView == false {
-                selectedWorkout = nil
+                resetWorkout()
             }
         }
     }
