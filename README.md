@@ -51,7 +51,7 @@
 - watch app target 에 `HealthKit` 을 추가합니다.
 - 백그라운드에서 workout session 이 실행되어야 하기 때문에 `background modes capability` 를 추가해야 합니다.
 
-<img width="600" alt="스크린샷 2022-11-11 오후 6 02 29" src="https://user-images.githubusercontent.com/69136340/201652970-d44a3251-79e2-41f2-97f8-a3f8fec5e46b.png">
+<img width="700" alt="스크린샷 2022-11-14 오후 10 58 09" src="https://user-images.githubusercontent.com/69136340/201678623-7dd9d02d-45c0-4ddb-95df-f2a79e6d369e.png">
 
 - 해당 target 이 HealthKit 을 지원하도록 설정합니다.
     - apple developer 에서 Identifiers 에서 App ID 로 추가합니다.
