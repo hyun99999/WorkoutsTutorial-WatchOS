@@ -53,7 +53,8 @@ class WorkoutManager: NSObject, ObservableObject {
         )
         
         session?.delegate = self
-
+        builder?.delegate = self
+        
         // Start the workout session and begin data collection.
         let startDate = Date()
         session?.startActivity(with: startDate)
@@ -110,6 +111,14 @@ class WorkoutManager: NSObject, ObservableObject {
         session?.end()
         showingSummaryView = true
     }
+
+    // MARK: - Workout Metrics
+
+    @Published var averageHeartRate: Double = 0
+    @Published var heartRate: Double = 0
+    @Published var activeEnergy: Double = 0
+    @Published var distance: Double = 0
+    
 }
 
 // MARK: - HKWorkoutSessionDelegate
@@ -135,5 +144,25 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
 
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
 
+    }
+}
+
+// MARK: - HKLiveWorkoutBuilderDelegate
+
+extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
+    /// called whenever the builder collects an events.
+    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
+    }
+
+    /// called whenever the builder colects new samples.
+    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        for type in collectedTypes {
+            guard let quantityType = type as? HKQuantityType else { return }
+
+            let statistics = workoutBuilder.statistics(for: quantityType)
+
+            // Update the published values.
+            updateForStatistics(statistics)
+        }
     }
 }
