@@ -27,12 +27,12 @@ struct SummaryView: View {
                 VStack(alignment: .leading) {
                     SummaryMetricView(
                         title: "Total Time",
-                        value: durationFormatter.string(from: 30 * 60 + 15) ?? ""
+                        value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? ""
                     ).accentColor(Color.yellow)
                     SummaryMetricView(
                         title: "Total Distance",
                         value: Measurement(
-                            value: 1625,
+                            value: workoutManager.workout?.totalDistance?.doubleValue(for: .meter()) ?? 0,
                             unit: UnitLength.meters
                         ).formatted(
                             .measurement(
@@ -44,7 +44,7 @@ struct SummaryView: View {
                     SummaryMetricView(
                         title: "Total Calories",
                         value: Measurement(
-                            value: 96,
+                            value: workoutManager.workout?.totalEnergyBurned?.doubleValue(for: .kilocalorie()) ?? 0,
                             unit: UnitEnergy.kilocalories
                         ).formatted(
                             .measurement(
@@ -55,7 +55,7 @@ struct SummaryView: View {
                     ).accentColor(Color.pink)
                     SummaryMetricView(
                         title: "Avg. Heart Rate",
-                        value: 143.formatted(
+                        value: workoutManager.averageHeartRate.formatted(
                             .number.precision(.fractionLength(0))
                         )
                         + " bpm"
