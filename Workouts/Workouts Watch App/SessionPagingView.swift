@@ -9,6 +9,7 @@ import SwiftUI
 import WatchKit
 
 struct SessionPagingView: View {
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @EnvironmentObject var workoutManager: WorkoutManager
     // default is metrics. the metrics view is displayed.
     @State private var selection: Tab = .metrics
@@ -29,6 +30,12 @@ struct SessionPagingView: View {
         .navigationBarHidden(selection == .nowPlaying)
         // We shouldn't need to swipe to the MatrcisView when they pauses or resumes their workout.
         .onChange(of: workoutManager.running) { _ in
+            displayMetricsView()
+        }
+        .tabViewStyle(
+            PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic)
+        )
+        .onChange(of: isLuminanceReduced) { _ in
             displayMetricsView()
         }
     }
