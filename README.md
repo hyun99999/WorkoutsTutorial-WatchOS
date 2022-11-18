@@ -3,6 +3,9 @@
 - [WWDC22) Build a workout app for Apple Watch](https://developer.apple.com/videos/play/wwdc2021/10009/) 세션에서 알아보는 HealthKit 에 대해서 기록해보았습니다.
 - HealthKit 의 heart rate 를 사용하기 위한 목표를 가지고 시청한 세션입니다.
 
+*다음은 세션의 결과입니다.* 
+<img src="https://user-images.githubusercontent.com/69136340/202677965-6f775d33-8c29-498c-816f-3d07e02852e9.mp4" width ="200">
+
 ## 👉 Build a workout app for Apple Watch
 
 세션 중 심박수를 수집할 수 있는 `HKWorkoutSession` 클래스에 대해서 들을 수 있었다.
